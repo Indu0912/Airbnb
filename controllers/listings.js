@@ -39,7 +39,7 @@ module.exports.showListing=async (req, res) => {
       newListing.owner = req.user._id; // current logged-in user
       newListing.image={url,filename}
 
-      newListing.geometry =  response.body.features[0].geometry
+      // newListing.geometry =  response.body.features[0].geometry
      let savedListing= await newListing.save();
      console.log(savedListing)
       req.flash("success", "New Listing Created!");
